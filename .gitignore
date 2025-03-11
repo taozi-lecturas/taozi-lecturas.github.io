@@ -1,0 +1,19 @@
+# Carpetas
+_site
+_posts
+
+
+# archivos
+klise.gemspec
+novelas.md
+about.md
+thanks.md
+help.md
+categories.html
+
+
+# caches
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
