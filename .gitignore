@@ -1,11 +1,11 @@
 # Carpetas
 _site
-_posts
+./_posts
 
 
 # archivos
 klise.gemspec
-novelas.md
+list-novels.md
 about.md
 thanks.md
 help.md

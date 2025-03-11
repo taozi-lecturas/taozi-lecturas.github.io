@@ -3,7 +3,7 @@
   external: false
 
 - title: Novelas
-  url: /archive/  # Modificar permlink /novelas/ 
+  url: /novelas/  # Modificar permlink /novelas/ 
   external: false
 
 - title: Etiquetas
