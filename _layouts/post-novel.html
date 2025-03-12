@@ -46,15 +46,20 @@ layout: compress
           </div>
           {% endif %} -->
           <!-- <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1> -->
-          <h1 class="header-title" itemprop="headline"> 
-            <span style="
-              opacity: 0.6;
-              font-size: 0.5em;
-              text-transform: uppercase">
-              {{ page.novel | escape }} 
+          <h1 class="header-title" itemprop="headline">
+            <span style="opacity: 0.9; font-size: 0.5em; text-transform: uppercase">
+              {% assign intro_post = site.posts | where: "novel", page.novel | where: "order", 0 | first %}
+              {% if intro_post %}
+                <a href="{{ intro_post.url }}" class="novel-link">
+                  {{ page.novel | escape }}
+                </a>
+              {% else %}
+                <span class="novel-link">{{ page.novel | escape }}</span>
+              {% endif %}
             </span>
-            <br> 
-            {{ page.title | escape }} 
+            <br>
+            <br>
+            {{ page.title | escape }}
           </h1>
           {% if page.date %}
           <div class="post-meta">

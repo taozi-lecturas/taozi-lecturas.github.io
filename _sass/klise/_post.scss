@@ -27,7 +27,7 @@
 
   .header-title {
     font-size: 2em;
-    line-height: 1.2;
+    line-height: 0.7;
     margin-top: 10px;
     margin-bottom: 20px;
 
@@ -110,8 +110,8 @@
 
   > p {
     margin: 0;
-    padding-top: $spacing-full - 15;
-    padding-bottom: $spacing-full - 15;
+    padding-top: $spacing-full - 20;
+    padding-bottom: $spacing-full - 20;
   }
 
   ul.task-list {
