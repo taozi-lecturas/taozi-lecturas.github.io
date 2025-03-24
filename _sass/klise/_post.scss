@@ -13,12 +13,17 @@
   // margin-bottom: 3em;
 
   .tags {
-    margin-left: 3px;
+    // margin-left: 3px;
+    margin-left: 0px;
     letter-spacing: 0.5px;
 
     .tag {
       font-weight: $bold-weight;
       font-size: $small-font-size - 2;
+      padding: 1px 3px;
+      border-radius: 2px;
+      border: 1px solid rgba(128,128,128,0.1);
+      background-color: rgba(128,128,128,0.1);
 
       &:hover {
         text-decoration: none;

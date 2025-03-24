@@ -399,6 +399,9 @@
 .archive-tags {
   height: auto;
   .tag-item {
+    font-weight: $bold-weight;
+    font-size: $small-font-size - 1;
+    text-transform: uppercase;
     padding: 1px 3px;
     border-radius: 2px;
     border: 1px solid rgba(128, 128, 128, 0.1);
