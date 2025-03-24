@@ -61,6 +61,7 @@ jekyll_compose:
 # Homepage limit posts
 number_of_posts: 10
 
+# Feed
 feed:
   path: /feed.xml
   posts_limit: 10
