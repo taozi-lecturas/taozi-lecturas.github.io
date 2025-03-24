@@ -8,7 +8,8 @@
 
 // Post title
 .header {
-  margin-top: 7.8em;
+  // margin-top: 7.8em;
+  margin-top: 1.8em;
   // margin-bottom: 3em;
 
   .tags {
@@ -244,8 +245,10 @@
     font-size: $small-font-size;
 
     .post-nav-item {
-      display: block;
-      width: 100%;
+      // display: block;
+      // width: 100%;
+      display: inline-block;
+      width: 49%;
     }
 
     .post-nav-item:nth-child(even) {
