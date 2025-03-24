@@ -43,6 +43,7 @@
     gtag("config", "{{ site.google_analytics }}");
   </script>
 {%- endif -%}
+
 {%- if page.url == '/archive/' -%}
   <script src="/assets/js/search.min.js"></script>
   <script>
@@ -53,3 +54,15 @@
     });
   </script>
 {%- endif -%}
+
+<!-- Contador de vistas -->
+<script>
+  var t = setInterval(function() {
+      if (window.goatcounter && window.goatcounter.visit_count) {
+          clearInterval(t)
+          window.goatcounter.visit_count({append: 'body'})
+      }
+  }, 100)
+</script>
+<script data-goatcounter="https://131313.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
