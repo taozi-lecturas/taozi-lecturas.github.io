@@ -2,6 +2,17 @@
 layout: default
 home: true
 ---
+<!-- Slider de noticias -->
+<div class="news-slider">
+  <div class="slides">
+    {% for noticia in site.data.noticias %}
+      <div class="slide">
+        <h3><a href="{{ noticia.enlace }}">{{ noticia.titulo }}</a></h3>
+        <p>{{ noticia.descripcion }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
 
 <h3 class="posts-item-note" aria-label="Recent Posts">ÚLTIMOS LANZAMIENTOS</h3>
 {%- for post in site.posts limit: site.number_of_posts -%}
