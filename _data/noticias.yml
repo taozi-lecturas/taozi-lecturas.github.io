@@ -1,0 +1,11 @@
+- titulo: "Nueva versión de Jekyll lanzada"
+  enlace: "https://jekyllrb.com/news/2024/04/01/jekyll-5-released.html"
+  descripcion: "Jekyll 5.0 ya está disponible con mejoras en el rendimiento y nuevas funciones."
+
+- titulo: "GitHub Pages ahora soporta más plugins"
+  enlace: "https://github.blog/2024-03-15-github-pages-update/"
+  descripcion: "GitHub Pages amplía la lista de plugins soportados, permitiendo más flexibilidad."
+
+- titulo: "Consejos para optimizar tu blog con SEO"
+  enlace: "/blog/seo-optimizacion"
+  descripcion: "Aprende cómo mejorar el posicionamiento de tu blog con Jekyll."
