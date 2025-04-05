@@ -1,41 +1,63 @@
+
 {% assign novel_posts = site.posts | where: "novel", page.novel | sort: "order" %}
 {% assign current_index = -1 %}
 
-<!-- Encontrar el índice del post actual -->
-<!-- {% for post in novel_posts %}
+{% for post in novel_posts %}
   {% if post.url == page.url %}
     {% assign current_index = forloop.index0 %}
   {% endif %}
-{% endfor %} -->
+{% endfor %}
 
-<!-- Depuración: Mostrar todos los posts de la novela -->
-<!-- <p>Posts de la novela "{{ page.novel }}":</p>
-<ul>
-  {% for post in novel_posts %}
-    <li>
-      {{ post.title }} (Order: {{ post.order }}, URL: {{ post.url }})
-    </li>
-  {% endfor %}
-</ul> -->
+
 
 <!-- Navegación -->
 <nav class="post-nav">
   {% if current_index > 0 %}
-    {% assign prev_idx = current_index | minus: 1 %}
-    {% assign previous_post = novel_posts[prev_idx] %}
-    <a class="post-nav-item post-nav-prev" href="{{ previous_post.url }}">
-      <div class="nav-arrow">Anterior</div>
-      <span class="post-title">{{ previous_post.title }}</span>
-    </a>
+  {% assign prev_idx = current_index | minus: 1 %}
+  {% assign previous_post = novel_posts[prev_idx] %}
+  <a class="post-nav-item post-nav-prev" href="{{ previous_post.url }}" title="Capitulo anterior">
+    <div class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-left-icon lucide-chevron-left">
+        <path d="m15 18-6-6 6-6" />
+      </svg>
+    </div>
+    <span class="post-title">{{ previous_post.title }}</span>
+  </a>
   {% endif %}
 
+  {% assign first_post = novel_posts | where: "order", 0 | first %}
+  <a class="post-nav-item post-nav-chapters" href="{{ first_post.url }}#chapter-list" title="Lista de capítulos">
+    <div class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-list-icon lucide-list">
+        <path d="M3 12h.01" />
+        <path d="M3 18h.01" />
+        <path d="M3 6h.01" />
+        <path d="M8 12h13" />
+        <path d="M8 18h13" />
+        <path d="M8 6h13" />
+      </svg>
+      </svg>
+    </div>
+    <span class="post-title">Lista de capítulos</span>
+  </a>
+
   {% assign last_idx = novel_posts.size | minus: 1 %}
-  {% if current_index < last_idx %}
-    {% assign next_idx = current_index | plus: 1 %}
-    {% assign next_post = novel_posts[next_idx] %}
-    <a class="post-nav-item post-nav-next" href="{{ next_post.url }}">
-      <div class="nav-arrow">Siguiente</div>
-      <span class="post-title">{{ next_post.title }}</span>
+  {% if current_index < last_idx %} 
+    {% assign next_idx=current_index | plus: 1 %} 
+    {% assign next_post=novel_posts[next_idx] %} 
+    <a class="post-nav-item post-nav-next" href="{{ next_post.url }}" title="Capitulo siguiente">
+    <div class="nav-arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        class="lucide lucide-chevron-right-icon lucide-chevron-right">
+        <path d="m9 18 6-6-6-6" />
+      </svg>
+    </div>
+    <span class="post-title">{{ next_post.title }}</span>
     </a>
-  {% endif %}
+    {% endif %}
 </nav>

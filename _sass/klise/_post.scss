@@ -6,10 +6,24 @@
   }
 }
 
+// Novel Title
+h2.novel-title {
+  text-transform: uppercase;
+  font-size: 1rem !important;
+  text-align: center;
+  opacity: 0.8;
+  
+  @include media-query($on-mobile) {
+    line-height: normal;
+  }
+}
+
 // Post title
 .header {
-  // margin-top: 7.8em;
-  margin-top: 1.8em;
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: 1px solid $light;
+
   // margin-bottom: 3em;
 
   .tags {
@@ -218,17 +232,23 @@
   }
 }
 
+// Navegación de posts
+// navegación inferior
 .post-nav {
   display: flex;
   position: relative;
   margin-top: 5em;
-  border-top: 1px solid $light;
   line-height: 1.4;
+  border-top: 1px solid $light;
 
   .post-nav-item {
     border-bottom: 0;
     font-weight: $bold-weight;
     padding-bottom: 10px;
+    width: 33.33%;
+    padding-top: 10px;
+    text-decoration: none;
+    box-sizing: border-box;
 
     .post-title {
       color: $black;
@@ -249,17 +269,18 @@
       margin-bottom: 3px;
     }
 
-    width: 50%;
-    padding-top: 10px;
-    text-decoration: none;
-    box-sizing: border-box;
-
-    &:nth-child(odd) {
+    &:nth-child(1) {
       padding-left: 0;
       padding-right: 20px;
     }
 
-    &:nth-child(even) {
+    &:nth-child(2) {
+      text-align: center;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &:nth-child(3) {
       text-align: right;
       padding-right: 0;
       padding-left: 20px;
@@ -267,20 +288,44 @@
   }
 
   @include media-query($on-mobile) {
-    display: block;
+    // display: block;
     font-size: $small-font-size;
 
     .post-nav-item {
       // display: block;
       // width: 100%;
-      display: inline-block;
-      width: 49%;
+      // display: inline-block;
+      // width: 49%;
     }
 
-    .post-nav-item:nth-child(even) {
+    .post-nav-item:nth-child(2) {
       border-left: 0;
       padding-left: 0;
-      border-top: 1px solid $light;
+      padding-right: 0;
+    }
+  }
+}
+
+// navegación superior
+article {
+  .post-nav {
+    border: none;
+    margin-top: 0px;
+    width: 30%;
+    min-width: 210px;
+    margin: auto;
+
+    .post-nav-item  {
+      text-align: center !important;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      .nav-arrow {
+        margin-bottom: 0px;
+      }
+      .post-title {
+        display: none;
+      }
+
     }
   }
 }

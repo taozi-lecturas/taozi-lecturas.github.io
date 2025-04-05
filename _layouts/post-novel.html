@@ -32,7 +32,21 @@ layout: compress
   <div class="wrapper post">
     <main class="page-content" aria-label="Content">
       <article itemscope itemtype="https://schema.org/BlogPosting">
-
+        <h2 class="novel-title">
+          {% assign intro_post = site.posts | where: "novel", page.novel | where: "order", 0 | first %}
+          {% if intro_post %}
+            <a href="{{ intro_post.url }}" class="novel-link">
+              {{ page.novel | escape }}
+            </a>
+          {% else %}
+            <span class="novel-link">{{ page.novel | escape }}</span>
+          {% endif %}
+        </h2>
+        <div class="wrap-navigation">
+          {% if page.next or page.previous %}
+            {% include navigation-novel.html %}
+          {% endif %}
+        </div>
         <header class="header">
           <!-- {% if page.tags and page.tags != empty %}
           <div class="tags">
@@ -47,18 +61,6 @@ layout: compress
           {% endif %} -->
           <!-- <h1 class="header-title" itemprop="headline">{{ page.title | escape }}</h1> -->
           <h1 class="header-title" itemprop="headline">
-            <span style="opacity: 0.9; font-size: 0.5em; text-transform: uppercase">
-              {% assign intro_post = site.posts | where: "novel", page.novel | where: "order", 0 | first %}
-              {% if intro_post %}
-                <a href="{{ intro_post.url }}" class="novel-link">
-                  {{ page.novel | escape }}
-                </a>
-              {% else %}
-                <span class="novel-link">{{ page.novel | escape }}</span>
-              {% endif %}
-            </span>
-            <br>
-            <br>
             {{ page.title | escape }}
           </h1>
           {% if page.date %}
