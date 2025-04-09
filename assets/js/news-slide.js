@@ -10,6 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
       slides.style.transform = `translateX(-${index * 100}%)`;
     }
   
-    setInterval(nextSlide, 3000); // Cambia cada 3 segundos
+    setInterval(nextSlide, 4000); // Cambia cada 3 segundos
   });
   
